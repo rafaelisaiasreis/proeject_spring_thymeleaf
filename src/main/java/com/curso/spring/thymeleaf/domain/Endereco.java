@@ -1,5 +1,6 @@
 package com.curso.spring.thymeleaf.domain;
 
+import com.curso.spring.thymeleaf.enums.UF;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.validator.constraints.Length;
@@ -8,14 +9,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @Table(name = "ENDERECOS")
 @Entity
 @Data
-public class Endereco extends AbstractEntity<Long> {
+public class Endereco {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
   @Column(name = "logradouro")
   @NotNull

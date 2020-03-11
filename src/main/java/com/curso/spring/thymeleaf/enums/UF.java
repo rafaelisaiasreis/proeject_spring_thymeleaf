@@ -1,4 +1,4 @@
-package com.curso.spring.thymeleaf.domain;
+package com.curso.spring.thymeleaf.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
